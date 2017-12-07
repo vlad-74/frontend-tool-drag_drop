@@ -1,0 +1,37 @@
+<html>
+<head>
+<link href="/styles/index.css" rel="stylesheet">
+ <title>DRAG_DROP</title>
+</head>
+<body>
+
+<div ng-app="sortableApp" ng-controller="sortableController" class="container">
+  <h3>Neither List can have more than 10 elements</h3>
+
+  <div class="floatleft">
+    <div ui-sortable="sortableOptions" id="screen-{{$index}}" class="apps-container screen floatleft" ng-model="screen" ng-repeat="screen in rawScreens">
+      {{screen.name}} {{screen.length}}
+      <div class="app" ng-repeat="app in screen">{{$index + 1}} {{app.title}} {{app.id_list}}</div>
+    </div>
+  <div style="clear: both;"></div>
+</div>
+
+  <div class="floatright">
+    <button type="button" ng-click="logModels()">Log Models</button>
+    <ul class="list logList">
+      <li ng-repeat="entry in sortingLog" class="logItem">
+        {{entry}}
+      </li>
+    </ul>
+  </div>
+  
+  <div class="clear"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.4/angular.min.js"></script>
+  <script src="https://rawgithub.com/angular-ui/ui-sortable/master/src/sortable.js"></script>
+  <script src="js/app.js"></script>
+</div>
+  </body>
+</html>
