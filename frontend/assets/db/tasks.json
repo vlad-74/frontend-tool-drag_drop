@@ -1,0 +1,62 @@
+[
+	{
+        "id": 1,
+        "title": "Item 1| aaa|",
+        "value": 1,
+        "id_list": 1
+    },
+    {
+        "id": 2,
+        "title": "Item 2| aaa|",
+        "value": 2,
+        "id_list": 1
+    },
+    {
+        "id": 3,
+        "title": "Item 3| aaa|",
+        "value": 3,
+        "id_list": 1
+    },
+	{
+        "id": 4,
+        "title": "Item 1| bbb|",
+        "value": 1,
+        "id_list": 2
+    },
+    {
+        "id": 5,
+        "title": "Item 2| bbb|",
+        "value": 2,
+        "id_list": 2
+    },
+    {
+        "id": 6,
+        "title": "Item 3| bbb|",
+        "value": 3,
+        "id_list": 2
+    },
+    {
+        "id": 7,
+        "title": "Item 4| bbb|",
+        "value": 4,
+        "id_list": 2
+    },
+	{
+        "id": 8,
+        "title": "Item 1| ccc|",
+        "value": 1,
+        "id_list": 3
+    },
+    {
+        "id": 9,
+        "title": "Item 2| ccc|",
+        "value": 2,
+        "id_list": 3
+    },
+    {
+        "id": 10,
+        "title": "Item 3| ccc|",
+        "value": 3,
+        "id_list": 3
+    }
+]

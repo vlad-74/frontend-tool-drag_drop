@@ -1,11 +1,35 @@
+@import './modalDialog/index.styl'
+
+
+[ng\\:cloak], [ng-cloak], .ng-cloak 
+  display: none;
+
+#num
+    color: blue
+    font-style: italic
+
+.header_tasck_list
+    position: relative /* now anchors absolute items */
+
+.add_button
+    position: absolute
+    top: -25px
+    right: -24px
+    background-color: yellow
+    border-radius 10px
+
 .list
     list-style none outside none
     margin 10px 0 30px
 
+.list_name
+    font-size 1.3em
+    font-weight bold
+
 .apps-container
-    border 2px dashed blue
+    border 2px solid blue
     margin 10px 10px 0 0
-    padding 5px
+    padding 25px
 
 .app
     width 170px
@@ -18,6 +42,22 @@
     font-weight bold
     text-align center
     cursor move
+    position: relative /* now anchors absolute items */
+
+#screen-0 .app-0, #screen-1 .app-0
+    background-color red
+#screen-0 .app-1, #screen-1 .app-1
+    background-color yellow
+
+.del_button
+    position: absolute
+    top: 5px
+    right: -24px
+
+.edit_button
+    position: absolute
+    top: 5px
+    left: -24px
 
 body
     font-family Verdana, 'Trebuchet ms', Tahoma
@@ -40,7 +80,7 @@ body
     margin-bottom 10px
 
 .container
-    width 800px
+    width 1200px
     margin auto
 
 h2, h3
@@ -54,3 +94,32 @@ h2, h3
 
 .clear
     clear both
+
+#screen-0
+    background-color lightgreen
+    border-radius 10px
+
+#screen-1
+    background-color lightyellow
+    border-radius 10px
+
+#screen-2
+    background-color lightblue
+    border-radius 10px
+
+#screen-4
+    background-color red
+
+#loader
+    position absolute
+    top 50%
+    left 50%
+    margin-left -12%
+    margin-top -10%
+    z-index 2000
+    .fa-spinner
+        font-size 200px
+    span
+        margin-left 30%
+        margin-top -33%
+        float left

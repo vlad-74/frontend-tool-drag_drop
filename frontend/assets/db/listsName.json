@@ -1,14 +1,14 @@
 [
 	{
 		"id":"1",
-		"name":"aaaaaa"
+		"name":"План"
 	},
 	{
 		"id":"2",
-		"name":"bbbbb"
+		"name":" В процессе"
 	},
 	{
 		"id":"3",
-		"name":"cccccc"
+		"name":"Готово"
 	}
 ]

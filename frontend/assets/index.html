@@ -1,20 +1,80 @@
-<html>
+<html ng-app="sortableApp" lang="ru">
 <head>
-<link href="/styles/index.css" rel="stylesheet">
- <title>DRAG_DROP</title>
+  <meta charset="utf-8">
+  <script src="https://use.fontawesome.com/5985d9f7ac.js"></script>  
+  <link href="/styles/index.css" rel="stylesheet">
+  <title>DRAG_DROP</title>
 </head>
-<body>
+<body ng-cloak>
 
-<div ng-app="sortableApp" ng-controller="sortableController" class="container">
-  <h3>Neither List can have more than 10 elements</h3>
+  <div id="loader">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
 
-  <div class="floatleft">
-    <div ui-sortable="sortableOptions" id="screen-{{$index}}" class="apps-container screen floatleft" ng-model="screen" ng-repeat="screen in rawScreens">
-      {{screen.name}} {{screen.length}}
-      <div class="app" ng-repeat="app in screen">{{$index + 1}} {{app.title}} {{app.id_list}}</div>
+  <div ng-controller="sortableController" class="container">
+    <h3>Задачи. Не более 10 задач в листе !!!</h3>
+
+    <div class="floatleft">
+      <div ui-sortable="sortableOptions" id="screen-{{$index}}" class="apps-container screen floatleft" ng-model="screen" ng-repeat="screen in rawScreens">
+        <div class="header_tasck_list"> 
+          <span class ="list_name">{{screen.name}} : </span> 
+          <span class ="list_count">{{screen.length}} шт</span>
+          <a href="#" id="add_tasck-{{$index}}"  
+            class ="add_button floatright" 
+            ng-click="addtasck($index + 1)" 
+            title="Add">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+          </a>
+        </div> 
+        <div class="app app-{{$index}}" ng-repeat="app in screen">
+          <span id = "num" class = "floatleft">{{$index + 1}} </span>
+          {{app.title}} 
+          <span id = "list_id" class = "floatright">{{app.id_list}}</span>
+<!--           {{app.id}} -->
+
+          <a href="#" id="tasck-{{$index}}" 
+            class ="del_button floatright" 
+            ng-click="deltasck(app.id_list, app.id)" 
+            title="Delete">
+            <i class="fa fa-trash-o" aria-hidden="false"></i>
+          </a>
+
+          <a href="#" id="edittasck-{{$index}}"
+            class ="edit_button floatleft" 
+            ng-click="edittasck(app.id_list, app.id)" 
+            title="Edit">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div>
+    <div id="openModal" class="modalDialog">
+      <div>
+        <a href="#" ng-click="exit_modal()" title="Close" class="close">X</a>
+
+       <form>
+        <h2>{{html_title}}</h2>
+        <p>ИД : {{html_id}}<Br>
+        TITLE : <input type='text' ng-model='html_title'><Br>
+        ЗНАЧЕНИЕ : <input type='text' ng-model='html_value'><Br>
+        ЛИСТ : {{html_id_list}}</p>
+
+        <hr>
+        <a href="#" ng-click="savetasck(html_id_list, html_id)" 
+            class="save_button floatright">Сохранить
+        </a>
+        <a href="#" ng-click="exit_modal()" 
+            class="exit_button floatleft">Выйти
+        </a>
+       </form>
+
+        <div class="clear"></div>
+      </div>
     </div>
-  <div style="clear: both;"></div>
-</div>
+  </div>
 
   <div class="floatright">
     <button type="button" ng-click="logModels()">Log Models</button>
@@ -31,6 +91,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.4/angular.min.js"></script>
   <script src="https://rawgithub.com/angular-ui/ui-sortable/master/src/sortable.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
   <script src="js/app.js"></script>
 </div>
   </body>
